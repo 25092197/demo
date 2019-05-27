@@ -30,7 +30,9 @@ public class UserController {
     @RequestMapping("getUser")
     @ResponseBody
     public Users getUser(String name){
-        return userService.getUserByName(name);
+        Object user = userService.getUserByName(name);
+
+        return (Users) user;
     }
     @RequestMapping("setRedis")
     @ResponseBody

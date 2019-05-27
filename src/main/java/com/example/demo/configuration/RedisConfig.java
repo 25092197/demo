@@ -1,12 +1,9 @@
 package com.example.demo.configuration;
 
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.cache.RedisCacheConfiguration;
-import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
@@ -14,7 +11,6 @@ import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.lang.reflect.Method;
-import java.time.Duration;
 
 @Configuration
 @EnableCaching
@@ -35,19 +31,19 @@ public class RedisConfig {
         };
     }
 
-
-    // 缓存管理器
-    @Bean
-    public CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(Duration.ofSeconds(60))
-                .disableCachingNullValues();
-
-        return RedisCacheManager.builder(connectionFactory)
-                .cacheDefaults(config)
-                .transactionAware()
-                .build();
-    }
+//
+//    // 缓存管理器,使用后报错，暂时不知道什么原因
+//    @Bean
+//    public CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
+//        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
+//                .entryTtl(Duration.ofSeconds(60))
+//                .disableCachingNullValues();
+//
+//        return RedisCacheManager.builder(connectionFactory)
+//                .cacheDefaults(config)
+//                .transactionAware()
+//                .build();
+//    }
 
 
     /**
@@ -65,5 +61,4 @@ public class RedisConfig {
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
     }
-
 }
