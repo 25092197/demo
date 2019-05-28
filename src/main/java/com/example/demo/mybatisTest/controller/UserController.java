@@ -5,10 +5,12 @@ import com.example.demo.common.util.RedisUtil;
 import com.example.demo.mybatisTest.entity.Users;
 import com.example.demo.mybatisTest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.clients.jedis.Jedis;
 
 @Controller
 @RequestMapping("/")
@@ -20,6 +22,9 @@ public class UserController {
     RedisUtil redisUtil;
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    @Value("${spring.redis.host}")
+    private  String host;
 
     @RequestMapping("hello")
     @ResponseBody
@@ -34,16 +39,14 @@ public class UserController {
 
         return (Users) user;
     }
-    @RequestMapping("setRedis")
+
+    @RequestMapping("testJedis")
     @ResponseBody
-    public void setRedis(){
-        redisUtil.setValue("1","1");
-//        stringRedisTemplate.opsForValue().set("key", "hello");
+    public void testJedis(){
+        Jedis jedis = new Jedis(host);
+        jedis.set("a","++++++++++++");
+
+        System.out.println(jedis.get("a"));
     }
-    @RequestMapping("getRedis")
-    @ResponseBody
-    public String getRedis(){
-        return redisUtil.getValue("1").toString();
-//        return stringRedisTemplate.opsForValue().get("key");
-    }
+
 }

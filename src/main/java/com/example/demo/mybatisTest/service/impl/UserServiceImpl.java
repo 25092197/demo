@@ -13,8 +13,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao dao;
 
-
-
     @Override
     @Cacheable(value="user-key")
     public Users getUserByName(String name) {
