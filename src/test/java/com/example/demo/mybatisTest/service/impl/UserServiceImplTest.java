@@ -1,9 +1,9 @@
 package com.example.demo.mybatisTest.service.impl;
 
-import com.example.demo.mybatisTest.dao.DeptDao;
-import com.example.demo.mybatisTest.dao.RoleDao;
-import com.example.demo.mybatisTest.dao.UserDao;
-import com.example.demo.mybatisTest.entity.Users;
+import com.example.demo.redisTest.dao.DeptDao;
+import com.example.demo.redisTest.dao.RoleDao;
+import com.example.demo.redisTest.dao.UserDao;
+import com.example.demo.redisTest.entity.Users;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

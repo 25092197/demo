@@ -1,9 +1,9 @@
-package com.example.demo.mybatisTest.controller;
+package com.example.demo.redisTest.controller;
 
 
 import com.example.demo.common.util.RedisUtil;
-import com.example.demo.mybatisTest.entity.Users;
-import com.example.demo.mybatisTest.service.UserService;
+import com.example.demo.redisTest.entity.Users;
+import com.example.demo.redisTest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;

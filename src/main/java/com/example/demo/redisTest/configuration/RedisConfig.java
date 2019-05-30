@@ -1,4 +1,4 @@
-package com.example.demo.configuration;
+package com.example.demo.redisTest.configuration;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;

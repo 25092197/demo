@@ -1,8 +1,8 @@
-package com.example.demo.mybatisTest.service.impl;
+package com.example.demo.redisTest.service.impl;
 
-import com.example.demo.mybatisTest.dao.UserDao;
-import com.example.demo.mybatisTest.entity.Users;
-import com.example.demo.mybatisTest.service.UserService;
+import com.example.demo.redisTest.dao.UserDao;
+import com.example.demo.redisTest.entity.Users;
+import com.example.demo.redisTest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.demo.mybatisTest.entity;
+package com.example.demo.redisTest.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

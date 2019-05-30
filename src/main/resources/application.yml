@@ -57,6 +57,11 @@ spring:
         min-idle: 0
     #连接超时时间
     timeout: 10000
+  data:
+    mongodb:
+      host: localhost   #同127.0.0.1
+      port: 27017
+      database: test    #指定操作的数据库
 logging:
   level:
     root: info

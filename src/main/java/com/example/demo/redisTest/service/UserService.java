@@ -1,6 +1,6 @@
-package com.example.demo.mybatisTest.service;
+package com.example.demo.redisTest.service;
 
-import com.example.demo.mybatisTest.entity.Users;
+import com.example.demo.redisTest.entity.Users;
 
 
 public interface UserService {

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import javax.persistence.EntityManager;
 
 //@ComponentScan(basePackages = "com.example.demo.mybatisTest")
-@EnableJpaRepositories(basePackages = "com.example.demo.mybatisTest.dao")
+@EnableJpaRepositories(basePackages = "com.example.demo.*.dao")
 @SpringBootApplication
 public class DemoApplication {
 
